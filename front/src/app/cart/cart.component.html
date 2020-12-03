@@ -1,0 +1,26 @@
+
+<div class="container mt-6">
+  <div class="center">
+    <h1 class="display-4">Panier</h1>
+  </div>
+  <div class="card-center">
+    <table>
+      <thead>
+        <tr>
+          <th>Nom du produit</th>
+          <th>Prix</th>
+          <th>Suppression</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of (listProducts$ | async)">
+          <td>{{ item.nom }}</td>
+          <td>{{ item.prix }}€</td>
+          <td class="button-product"><button (click)="delProduct(item)" type="button" class="btn btn-danger">Supprimer</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="product-payment">
+    </div>
+  </div>
+</div>
