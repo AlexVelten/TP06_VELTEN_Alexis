@@ -1,7 +1,7 @@
 <?php
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
-date_default_timezone_set('America/Lima');
+//date_default_timezone_set('America/Lima');
 require_once "vendor/autoload.php";
 $isDevMode = true;
 $config = Setup::createYAMLMetadataConfiguration(array(__DIR__ . "\config\yaml"), $isDevMode);
@@ -13,4 +13,5 @@ $conn = array(
 'dbname' => 'Cours_DB1',
 'port' => '3306'
 );
-$entityManager = EntityManager::create($conn, $config);
+
+$em = EntityManager::create($conn, $config);

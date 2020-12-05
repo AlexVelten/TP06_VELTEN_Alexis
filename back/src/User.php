@@ -1,44 +1,96 @@
 <?php
-use Doctrine\ORM\Mapping as ORM;
+
+
 
 /**
  * User
- *
- * @ORM\Table(name="User")
- * @ORM\Entity
  */
 class User
 {
     /**
+     * @var int
+     */
+    private $id;
+
+    /**
      * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=50)
-     * @ORM\Id
      */
     private $login;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="password", type="string", length=256, nullable=true)
+     * @var string
      */
     private $password;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="firstName", type="string", length=50, nullable=true)
+     * @var string
      */
-    private $firstName;
+    private $firstname;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="lastName", type="string", length=50, nullable=true)
+     * @var string
      */
-    private $lastName;
+    private $lastname;
+
+    /**
+     * @var string
+     */
+    private $civility;
+
+    /**
+     * @var string
+     */
+    private $address;
+
+    /**
+     * @var string
+     */
+    private $city;
+
+    /**
+     * @var string
+     */
+    private $postalcode;
+
+    /**
+     * @var string
+     */
+    private $country;
+
+    /**
+     * @var string
+     */
+    private $mail;
+
+    /**
+     * @var string
+     */
+    private $phonenumber;
 
 
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set login.
+     *
+     * @param string $login
+     *
+     * @return User
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
 
     /**
      * Get login.
@@ -51,63 +103,15 @@ class User
     }
 
     /**
-     * Set login.
+     * Set password.
      *
-     * @param string|null $nom
-     *
-     * @return User
-     */
-    public function setLogin($login = null)
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get firstName.
-     *
-     * @return string|null
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * Set firstName.
-     *
-     * @param string|null $firstName
+     * @param string $password
      *
      * @return User
      */
-    public function setLastName($firstName = null)
+    public function setPassword($password)
     {
-        $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Get lastName.
-     *
-     * @return string|null
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * Set lastName.
-     *
-     * @param string|null $lastName
-     *
-     * @return User
-     */
-    public function setLastName($lastName = null)
-    {
-        $this->lastName = $lastName;
+        $this->password = $password;
 
         return $this;
     }
@@ -115,7 +119,7 @@ class User
     /**
      * Get password.
      *
-     * @return string|null
+     * @return string
      */
     public function getPassword()
     {
@@ -123,18 +127,218 @@ class User
     }
 
     /**
-     * Set password.
+     * Set firstname.
      *
-     * @param string|null $password
+     * @param string $firstname
      *
      * @return User
      */
-    public function setPassword($password = null)
+    public function setFirstname($firstname)
     {
-        $this->password = $password;
+        $this->firstname = $firstname;
 
         return $this;
     }
 
+    /**
+     * Get firstname.
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
 
+    /**
+     * Set lastname.
+     *
+     * @param string $lastname
+     *
+     * @return User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname.
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set civility.
+     *
+     * @param string $civility
+     *
+     * @return User
+     */
+    public function setCivility($civility)
+    {
+        $this->civility = $civility;
+
+        return $this;
+    }
+
+    /**
+     * Get civility.
+     *
+     * @return string
+     */
+    public function getCivility()
+    {
+        return $this->civility;
+    }
+
+    /**
+     * Set address.
+     *
+     * @param string $address
+     *
+     * @return User
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address.
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set city.
+     *
+     * @param string $city
+     *
+     * @return User
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city.
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set postalcode.
+     *
+     * @param string $postalcode
+     *
+     * @return User
+     */
+    public function setPostalcode($postalcode)
+    {
+        $this->postalcode = $postalcode;
+
+        return $this;
+    }
+
+    /**
+     * Get postalcode.
+     *
+     * @return string
+     */
+    public function getPostalcode()
+    {
+        return $this->postalcode;
+    }
+
+    /**
+     * Set country.
+     *
+     * @param string $country
+     *
+     * @return User
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country.
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set mail.
+     *
+     * @param string $mail
+     *
+     * @return User
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * Get mail.
+     *
+     * @return string
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * Set phonenumber.
+     *
+     * @param string $phonenumber
+     *
+     * @return User
+     */
+    public function setPhonenumber($phonenumber)
+    {
+        $this->phonenumber = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phonenumber.
+     *
+     * @return string
+     */
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
+    }
 }

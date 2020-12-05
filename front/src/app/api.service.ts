@@ -14,9 +14,9 @@ let BaseURL = "http://localhost:8080";
 
 export class ApiService {
 
-  addCustomerUrl : String = "/addCustomer";
-  getCustomerUrl : String = "/getCustomer";
-  loginUrl : String = "/login";
+  addUserUrl : String = "/user/add";
+  getUserUrl : String = "/user/";
+  loginUrl : String = "/user/login";
 
   constructor(private http:HttpClient) { }
 
@@ -30,18 +30,18 @@ export class ApiService {
 
   public addClient(c : Client) : Observable<Client> {
     let body = new URLSearchParams();
-    body.set('civilite',c.civilite);
-    body.set('nom',c.nom);
-    body.set('prenom',c.prenom);
-    body.set('adresse',c.adresse);
-    body.set('ville',c.ville);
-    body.set('telephone',c.telephone);
-    body.set('pays',c.pays);
-    body.set('code_postale',c.code_postale);
-    body.set('email',c.email);
+    body.set('civility',c.civilite);
+    body.set('lastName',c.nom);
+    body.set('firstName',c.prenom);
+    body.set('address',c.adresse);
+    body.set('city',c.ville);
+    body.set('phoneNumber',c.telephone);
+    body.set('country',c.pays);
+    body.set('postalCode',c.code_postale);
+    body.set('mail',c.email);
     body.set('login',c.login);
     body.set('password',c.password);
-    return this.http.post<any>(BaseURL + this.addCustomerUrl, body.toString(), { headers: { 'content-type': 'application/x-www-form-urlencoded' }});
+    return this.http.post<any>(BaseURL + this.addUserUrl, body.toString(), { headers: { 'content-type': 'application/x-www-form-urlencoded' }});
   }
 
   public login(login : string, password : string) : Observable<Client> {
